@@ -1,0 +1,9 @@
+# Folders
+node_modules
+dist
+.DS_Store
+
+# Files
+package-lock.json
+*.log
+*.icloud
