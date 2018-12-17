@@ -26,15 +26,17 @@
       url:'http://localhost:3100/cors-login',
     }).then(function (response) {
         $('#cors').html(response.data.msg)
+        
+        axios({
+          method:'get',
+          withCredentials: true,
+          url:'http://localhost:3100/cors-info',
+        }).then(function (response) {
+          $('#cors-info').html(response.data.msg)
+        })
+        
       })
     
-    axios({
-      method:'get',
-      withCredentials: true,
-      url:'http://localhost:3100/cors-info',
-    }).then(function (response) {
-        $('#cors-info').html(response.data.msg)
-      })
     
     // Proxy
     axios({
@@ -43,15 +45,17 @@
       url:'/api/proxy-login',
     }).then(function (response) {
         $('#proxy').html(response.data.msg)
+        
+        axios({
+          method:'get',
+          withCredentials: true,
+          url:'/api/proxy-info',
+        }).then(function (response) {
+          $('#proxy-info').html(response.data.msg)
+        })
+        
       })
     
-    axios({
-      method:'get',
-      withCredentials: true,
-      url:'/api/proxy-info',
-    }).then(function (response) {
-        $('#proxy-info').html(response.data.msg)
-      })
   </script>
 </body>
 
